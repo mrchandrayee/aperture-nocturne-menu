@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <title>Nocturne — Aperture Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div class="topbar">
+      <div class="traffic"><i></i><i></i><i></i></div>
+      <div class="brand">APERTURE <span>— <b>HTML</b> · <strong>CSS</strong> · <em>JS</em></span></div>
+      <div class="address">localhost / aperture</div>
+    </div>
+
+    <header class="sitebar">
+      <a class="wordmark" href="#home">Nocturne</a>
+      <button class="aperture-toggle" id="apertureToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="lens-shell"><span class="lens-glass"><span class="iris" id="iris"></span><span class="iris-highlight"></span></span></span>
+      </button>
+      <span class="fstop" id="fstop">f/16</span>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="ambient ambient-warm"></div><div class="ambient ambient-blue"></div>
+      <div class="hero-content" id="heroContent">
+        <h1 id="heroTitle">Shoot</h1>
+        <p id="heroSubtitle">Spring collection, shot on film</p>
+      </div>
+      <nav class="menu" id="menu" aria-label="Main navigation" inert>
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#journal">Journal</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <p class="menu-contact">Nocturne Cameras, Berlin <span>hello@nocturne.camera</span></p>
+      </nav>
+    </section>
+
+    <section class="code-panels" aria-label="Code preview">
+      <article class="code-panel html-panel">
+        <h2><i></i> index.html</h2>
+        <pre><code><comment>&lt;header class="aperture-bar"&gt;</comment>
+  <tag>&lt;button</tag> class=<str>"aperture-toggle"</str>
+    type=<str>"button"</str>
+    aria-label=<str>"Menu"</str><tag>&gt;</tag>
+    <tag>&lt;span</tag> class=<str>"aperture-readout"</str><tag>&gt;</tag>
+  <tag>&lt;/button&gt;</tag>
+  <tag>&lt;div</tag> class=<str>"aperture-menu"</str><tag>&gt;</tag>
+    <tag>&lt;ul</tag> class=<str>"aperture-list"</str><tag>&gt;</tag>
+      <tag>&lt;li&gt;&lt;a</tag> href=<str>"#work"</str><tag>&gt;</tag>Work</code></pre>
+      </article>
+      <article class="code-panel css-panel">
+        <h2><i></i> aperture.css</h2>
+        <pre><code><comment>/* the shutter flash */</comment>
+<selector>.aperture-flash</selector> {
+  position: fixed;
+  inset: 0;
+  background:
+    var(--aperture-flash);
+  opacity: 0;
+}
+<selector>.aperture-toggle</selector> {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+}</code></pre>
+      </article>
+      <article class="code-panel js-panel">
+        <h2><i></i> aperture.js</h2>
+        <pre><code><keyword>const</keyword> BLADES = 7;
+<comment>// how far a blade turns</comment>
+<keyword>const</keyword> OPEN_RAD = 57 * Math.PI
+  / 180;
+<keyword>const</keyword> F_STOPS = ['16', '11',
+  '8', '5.6', '4', '2.8', '1.4'];
+<comment>// one blade's turn when shutting</comment>
+<keyword>const</keyword> CLOSE_MS = 150;</code></pre>
+      </article>
+    </section>
+
+    <footer><span>NOCTURNE — ANALOG CAMERA STUDIO</span><span>BERLIN · EST. 1998</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
